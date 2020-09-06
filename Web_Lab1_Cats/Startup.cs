@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Web_Lab1_Cats.Models;
+
 
 namespace Web_Lab1_Cats
 {
@@ -23,6 +26,8 @@ namespace Web_Lab1_Cats
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<CatsContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
         }
 
@@ -50,7 +55,7 @@ namespace Web_Lab1_Cats
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Species}/{action=Index}/{id?}");
             });
         }
     }
