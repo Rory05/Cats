@@ -3,46 +3,75 @@
 @{
     ViewData["Title"] = "Details";
 }
+<h1 style="margin-left: 12%">Детальніше про кота </h1>
+<div class="fom1">
+    <img src="~/img/@Html.DisplayFor(modelItem => Model.Photo)" class="img1" />
+    <br />
+    <a class="alltext">
+        @Html.DisplayNameFor(model => model.Name)
+    </a>
+    <a class="text1">
+        @Html.DisplayFor(modelItem => Model.Name)
+    </a><br />
+    <a class="alltext">
+        @Html.DisplayNameFor(model => model.SpeciesId)
+    </a>
+    <a class="text1">
+        @Html.ActionLink(Model.Species.Name, "Details", "Species", new { id = Model.Species.Id, name = Model.Species.Name })
+    </a><br />
+    <a class="alltext">
+        @Html.DisplayNameFor(model => model.Age)
+    </a>
+    <a class="text1">
+        @Html.DisplayFor(modelItem => Model.Age)
+    </a><br />
+    <a class="alltext">
+        @Html.DisplayNameFor(model => model.Info)
+    </a>
+    <a class="text1">
+        @Html.DisplayFor(modelItem => Model.Info)
+    </a><br />
+    @*<div>
 
-<h1>Details</h1>
-
-<div>
-    <h4>Cats</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SpeciesId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SpeciesId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Info)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Info)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+        <hr />
+        <img src="~/img/@Html.DisplayFor(modelItem => Model.Photo)" class="img1" />
+        <dl class="row">
+            <dt class="col-sm-2 ">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>*@
+            @*<dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Photo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Photo)
+                </dd>*@
+            @*<dt class="   col-sm-2">
+                @Html.DisplayNameFor(model => model.SpeciesId)
+            </dt>
+            <dd class="col-sm-10 ">
+                @Html.ActionLink(Model.Species.Name, "Details", "Species", new { id = Model.Species.Id, name = Model.Species.Name })
+            </dd>*@
+            @*<dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.SpeciesId)
+                </dd>*@
+            @*<dt class="  col-sm-2">
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt class=" col-sm-2 ">
+                @Html.DisplayNameFor(model => model.Info)
+            </dt>
+            <dd class="col-sm-10 ">
+                @Html.DisplayFor(model => model.Info)
+            </dd>*@
+        @*</dl>*@
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Список всіх котів</a>
+    </div>

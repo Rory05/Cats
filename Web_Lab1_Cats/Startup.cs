@@ -55,7 +55,7 @@ namespace Web_Lab1_Cats
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Species}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

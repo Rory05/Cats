@@ -50,7 +50,7 @@
                         <a class="text1">
                             @Html.DisplayFor(modelItem => item.Lifetime)
                         </a><br />
-                        <input type="button" class="butt" value="Перейти до котиків > " onclick="location.href='@Url.Action("Index", "Cats")'" /><br/>
+                        <input type="button" class="butt" value="Перейти до котиків > " onclick="location.href='@Url.Action("Details", "Species", new { id = item.Id, name = item.Name })'" /><br/>
                         <a>
                             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                             <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>

@@ -32,8 +32,11 @@ namespace Web_Lab1_Cats.Controllers
                 return NotFound();
             }
 
+            
             var cats = await _context.Cats
+                .Include(f => f.Species)
                 .FirstOrDefaultAsync(m => m.Id == id);
+            List<Species> species = new List<Species>();
             if (cats == null)
             {
                 return NotFound();

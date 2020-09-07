@@ -25,20 +25,31 @@ namespace Web_Lab1_Cats.Controllers
         }
 
         // GET: Species/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, string? name)
         {
+
+            ViewBag.speciesName = name;
             if (id == null)
             {
                 return NotFound();
             }
-
             var species = await _context.Species
-                .FirstOrDefaultAsync(m => m.Id == id);
+              .FirstOrDefaultAsync(m => m.Id == id);
+
+            List<Cats> cats = new List<Cats>();
+            var cas = from cs in _context.Cats
+                       where cs.SpeciesId == species.Id
+                       select cs;
+            foreach (var au in cas)
+            {
+                cats.Add(au);
+            }
+           
             if (species == null)
             {
                 return NotFound();
             }
-
+            ViewData["catsName"] = cats;
             return View(species);
         }
 
