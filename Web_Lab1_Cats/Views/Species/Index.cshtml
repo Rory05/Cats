@@ -1,59 +1,63 @@
 ﻿@model IEnumerable<Web_Lab1_Cats.Species>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Породи";
 }
 
-<h1>Index</h1>
+<h1>Породи котиків</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Wool)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Size)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lifetime)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Wool)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Size)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lifetime)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="height:350px; border: none">
+                    <div class="fom1">
+                        <img src="~/img/@Html.DisplayFor(modelItem => item.Photo)" class="img1" />
+                        <br />
+                        <a class="alltext">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </a>
+                        <a class="text1">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a><br />
+                        <a class="alltext">
+                            @Html.DisplayNameFor(model => model.Country)
+                        </a>
+                        <a class="text1">
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </a><br />
+                        <a class="alltext">
+                            @Html.DisplayNameFor(model => model.Wool)
+                        </a>
+                        <a class="text1">
+                            @Html.DisplayFor(modelItem => item.Wool)
+                        </a><br />
+                        <a class="alltext">
+                            @Html.DisplayNameFor(model => model.Size)
+                        </a>
+                        <a class="text1">
+                            @Html.DisplayFor(modelItem => item.Size)
+                        </a><br />
+                        <a class="alltext">
+                            @Html.DisplayNameFor(model => model.Lifetime)
+                        </a>
+                        <a class="text1">
+                            @Html.DisplayFor(modelItem => item.Lifetime)
+                        </a><br />
+                        <input type="button" class="butt" value="Перейти до котиків > " onclick="location.href='@Url.Action("Index", "Cats")'" /><br/>
+                        <a>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </a><br />
+                    </div>
+                    </td></tr>
+            
+            }
+        </tbody>
+    </table>

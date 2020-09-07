@@ -12,7 +12,7 @@ namespace Web_Lab1_Cats
         public string Name { get; set; }
         [Required(ErrorMessage = "Поле не може бути порожнім")]
         [Display(Name = "Фото котика")]
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
         [Required(ErrorMessage = "Поле не може бути порожнім")]
        
         [Display(Name = "Вік")]

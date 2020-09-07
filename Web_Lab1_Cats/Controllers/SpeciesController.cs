@@ -53,7 +53,7 @@ namespace Web_Lab1_Cats.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Country,Wool,Size,Lifetime")] Species species)
+        public async Task<IActionResult> Create([Bind("Id,Name,Country,Wool,Size,Lifetime,Photo")] Species species)
         {
 
             int counter = 0;
@@ -100,7 +100,7 @@ namespace Web_Lab1_Cats.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Country,Wool,Size,Lifetime")] Species species)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Country,Wool,Size,Lifetime,Photo")] Species species)
         {
             if (id != species.Id)
             {

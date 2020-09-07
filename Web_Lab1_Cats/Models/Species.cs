@@ -25,6 +25,8 @@ namespace Web_Lab1_Cats
         [Required(ErrorMessage = "Поле не може бути порожнім")]
         [Display(Name = "Середня тривалість життя")]
         public int Lifetime { get; set; }
+        public string Photo { get; set; }
+        //[Required(ErrorMessage = "Поле не може бути порожнім")]
         public virtual ICollection<Cats> Cats { get; set; }
     }
 }
