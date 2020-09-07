@@ -3,14 +3,35 @@
 @{
     ViewData["Title"] = "Породи";
 }
-    
+
 <h1 style="margin-left: 12%">Породи котиків</h1>
 
 <p>
     <a asp-action="Create" style="margin-left: 12%">Create New</a>
 </p>
+<script>
+    function tableSearch() {
+        var phrase = document.getElementById('search-text');
+        var table = document.getElementById('info-table');
+        var regPhrase = new RegExp(phrase.value, 'i');
+        var flag = false;
+        for (var i = 0; i < table.rows.length; i++) {
+            flag = false;
+            for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+                flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
+                if (flag) break;
+            }
+            if (flag) {
+                table.rows[i].style.display = "";
+            } else {
+                table.rows[i].style.display = "none";
+            }
 
-<table class="table">
+        }
+    }
+</script>
+<input class="form-control col-7" type="text" placeholder="Пошук" id="search-text" onkeyup="tableSearch()">
+<table class="table table-striped" id="info-table">
     <tbody>
 
         @foreach (var item in Model)
@@ -50,14 +71,15 @@
                         <a class="text1">
                             @Html.DisplayFor(modelItem => item.Lifetime)
                         </a><br />
-                        <input type="button" class="butt" value="Перейти до котиків > " onclick="location.href='@Url.Action("Details", "Species", new { id = item.Id, name = item.Name })'" /><br/>
+                        <input type="button" class="butt" value="Перейти до котиків > " onclick="location.href='@Url.Action("Details", "Species", new { id = item.Id, name = item.Name })'" /><br />
                         <a>
                             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                             <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         </a><br />
                     </div>
-                    </td></tr>
-            
-            }
-        </tbody>
-    </table>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
