@@ -151,8 +151,19 @@ body {
         background-color: rgb(230, 154, 74);
         transition: 0.2s;
     }
-
-
+.fom2 {
+    border-radius: 15px;
+    height: 400px;
+    background-color: rgba(250, 237, 176, 0.5);
+}
+.img2 {
+    border-radius: 5px;
+    margin-top: 15px;
+    height: 250px;
+    display: block;
+    margin-left: 25px;
+    float: left;
+}
 
 ::-webkit-scrollbar {
     width: 20px;
