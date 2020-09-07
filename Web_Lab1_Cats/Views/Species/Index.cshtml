@@ -4,10 +4,10 @@
     ViewData["Title"] = "Породи";
 }
 
-<h1 style="margin-left: 12%">Породи котиків</h1>
+<h1 style="font-family: 'Segoe Print'; margin-left: 12%">Породи котиків</h1>
 
 <p>
-    <a asp-action="Create" style="margin-left: 12%">Create New</a>
+    <a asp-action="Create" style="margin-left: 12%" class="words">Додати нову породу</a>
 </p>
 <script>
     function tableSearch() {
@@ -73,8 +73,8 @@
                         </a><br />
                         <input type="button" class="butt" value="Перейти до котиків > " onclick="location.href='@Url.Action("Details", "Species", new { id = item.Id, name = item.Name })'" /><br />
                         <a>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="words">Редагувати</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="words">Видалити</a>
                         </a><br />
                     </div>
                 </td>

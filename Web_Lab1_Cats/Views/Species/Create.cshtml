@@ -1,13 +1,11 @@
 ﻿@model Web_Lab1_Cats.Species
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Додати";
 }
 
-<h1>Create</h1>
+<h1 style="font-family: 'Segoe Print'; margin-left: 12%">Додати</h1>
 
-<h4>Species</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -38,14 +36,14 @@
                 <span asp-validation-for="Lifetime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-light" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="words">Список всіх порід</a>
 </div>
 
 @section Scripts {

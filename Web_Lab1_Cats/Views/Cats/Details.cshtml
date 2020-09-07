@@ -1,9 +1,9 @@
 ﻿@model Web_Lab1_Cats.Cats
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Деталі";
 }
-<h1 style="margin-left: 12%">Детальніше про кота </h1>
+<h1 style="font-family: 'Segoe Print'; margin-left: 12%">Детальніше про кота </h1>
 <div class="fom1">
     <img src="~/img/@Html.DisplayFor(modelItem => Model.Photo)" class="img1" />
     <br />
@@ -31,47 +31,9 @@
     <a class="text1">
         @Html.DisplayFor(modelItem => Model.Info)
     </a><br />
-    @*<div>
-
-        <hr />
-        <img src="~/img/@Html.DisplayFor(modelItem => Model.Photo)" class="img1" />
-        <dl class="row">
-            <dt class="col-sm-2 ">
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Name)
-            </dd>*@
-            @*<dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.Photo)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.Photo)
-                </dd>*@
-            @*<dt class="   col-sm-2">
-                @Html.DisplayNameFor(model => model.SpeciesId)
-            </dt>
-            <dd class="col-sm-10 ">
-                @Html.ActionLink(Model.Species.Name, "Details", "Species", new { id = Model.Species.Id, name = Model.Species.Name })
-            </dd>*@
-            @*<dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.SpeciesId)
-                </dd>*@
-            @*<dt class="  col-sm-2">
-                @Html.DisplayNameFor(model => model.Age)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Age)
-            </dd>
-            <dt class=" col-sm-2 ">
-                @Html.DisplayNameFor(model => model.Info)
-            </dt>
-            <dd class="col-sm-10 ">
-                @Html.DisplayFor(model => model.Info)
-            </dd>*@
-        @*</dl>*@
+    
     </div>
     <div>
-        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-        <a asp-action="Index">Список всіх котів</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="words">Редагувати</a> 
+        <a asp-action="Index" class="words">Список всіх котів</a>
     </div>
