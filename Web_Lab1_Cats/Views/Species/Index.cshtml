@@ -31,7 +31,7 @@
     }
 </script>
 <input class="form-control col-7" type="text" placeholder="Пошук" id="search-text" onkeyup="tableSearch()">
-<table class="table table-striped" id="info-table">
+<table class="table " id="info-table">
     <tbody>
 
         @foreach (var item in Model)
@@ -83,3 +83,4 @@
         }
     </tbody>
 </table>
+<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" style="font-size: 30px; background-color: rgba(0, 0, 0, 0.00)" role="button"><i class="fas fa-chevron-up"></i>&uArr;</a>
