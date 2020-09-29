@@ -9,8 +9,17 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+    color: rgb(91, 8, 26);
+    font-size: 20px;
+    margin-left: 30px;
+    font-family: 'Segoe Print';
 }
+
+    a:hover {
+        margin-left: 30px;
+        font-family: 'Segoe Print';
+        color: black;
+    }
 
 .btn-primary {
     color: #fff;
@@ -63,6 +72,11 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    background-image: url('../img/cat3.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0;
+    transition: 1s;
 }
 
 .footer {
@@ -73,6 +87,10 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 /*----------------------------------------*/
+.mynav {
+    min-height: 90px;
+    background-color: rgb(255, 195, 125);
+}
 
 .alltext {
     font-size: 20px;
@@ -82,31 +100,134 @@ body {
     font-family: 'Segoe Print';
 }
 
+.text1 {
+    font-size: 20px;
+    color: black;
+    margin-left: 15px;
+    font-family: 'Segoe Print';
+}
 
-.divform1 {
-    border-style: double;
-    border-width: 12px;
-    border-color: black;
-    background-color: rgba(255, 248, 213, 0.8);
-    margin-top: 30px;
-    border-radius: 15px;
-    width: 35%;
-    height: 475px;
-    color: rgba(255, 248, 213, 0);
-    transition: 0.5s;
+.words {
+    font-family: 'Segoe Print';
+    font-size: 30px;
+    color: rgb(109, 18, 38);
+    font-weight: bold;
 }
 
 .fom1 {
-    width: 800px;
+    border-radius: 15px;
+    width: 850px;
     height: 300px;
-    background-color: aqua;
+    background-color: rgba(250, 237, 176, 0.5);
+}
+@media (max-width : 1000px) {
+    .fom1 {
+        width: 450px;
+        height: 600px;
+    }
+}
+
+.fom2 {
+    border-radius: 15px;
+    width: 450px;
+    height: 300px;
+    background-color: rgba(250, 237, 176, 0.5);
 }
 
 .img1 {
     border-radius: 5px;
-    margin-top: auto;
-    height: 100px;
+    margin-top: 25px;
     display: block;
     margin-left: 25px;
+    margin-right: 25px;
     float: left;
+    height: 250px;
+    width: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.butt {
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-top: 10px;
+    width: 370px;
+    height: 50px;
+    font-family: 'Segoe Print';
+    font-size: 30px;
+    background-color: rgb(255, 195, 125);
+    transition: 0.2s;
+}
+
+    .butt:hover {
+        border-radius: 5px;
+        width: 400px;
+        height: 60px;
+        font-family: 'Segoe Print';
+        font-size: 30px;
+        background-color: rgb(230, 154, 74);
+        transition: 0.2s;
+    }
+
+
+
+.fraza {
+    margin-top: 7%;
+    margin-left: 1%;
+    margin-right: 30%;
+    font-family: 'Segoe Print';
+    font-size: 40px;
+    color: rgb(109, 18, 38);
+    font-weight: bold;
+    text-shadow: 5px
+}
+
+.form-control {
+    width: 150px;
+    color: antiquewhite;
+    outline-color: burlywood;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+    background-color: rgba(250, 237, 176);
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(250, 237, 176);
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(255, 195, 125);
+    }
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    z-index: 99;
+}
+.catt {
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+}
+
+@media (max-width : 575px) {
+    .catt {
+        left: 220px;
+    }
+}
+.back {
+    background-color: rgb(255, 195, 125);
 }
