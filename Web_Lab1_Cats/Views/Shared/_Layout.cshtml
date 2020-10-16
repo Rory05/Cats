@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
     <link rel="shortcut icon" href="~/img/iconnew.png" type="image/png">
     <title>@ViewData["Title"] </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
 </head>
 <body>
     <div class="wrapper">
@@ -31,6 +34,9 @@
                         </li>
                         <li class="nav-item back">
                             <a class="words nav-link text-dark" asp-area="" asp-controller="Species" asp-action="Index">Породи</a>
+                        </li>
+                        <li class="nav-item back">
+                            <a class="words nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Карта</a>
                         </li>
                     </ul>
                 </div>

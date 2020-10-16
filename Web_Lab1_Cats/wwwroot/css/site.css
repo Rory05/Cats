@@ -227,7 +227,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 20px;
-    background-color: rgba(250, 237, 176);
+    background-color: rgb(250, 237, 176);
 }
 
 ::-webkit-scrollbar-track {
@@ -259,12 +259,14 @@ body {
     top: 0px;
     left: 50px;
     transition: 0.4s;
+    z-index: 99;
 }
 
 @media (max-width : 575px) {
     .catt {
         left: 50%;
         transition: 0.4s;
+        z-index: 99;
     }
 }
 
