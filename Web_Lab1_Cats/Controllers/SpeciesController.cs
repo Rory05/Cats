@@ -5,14 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Web_Lab1_Cats;
+using Web_Lab1_Cats.Models;
 
 namespace Web_Lab1_Cats.Controllers
 {
     public class SpeciesController : Controller
     {
         private readonly CatsContext _context;
-
         public SpeciesController(CatsContext context)
         {
             _context = context;
@@ -180,6 +179,20 @@ namespace Web_Lab1_Cats.Controllers
         private bool SpeciesExists(int id)
         {
             return _context.Species.Any(e => e.Id == id);
+        }
+
+        public ActionResult AutocompleteSearch(string term)
+        {
+            List<Species> species = new List<Species>();
+            
+            var spec = species.Where(a => a.Name.Contains(term))
+                            .Select(a => new { value = a.Name })
+                            .Distinct();
+            //foreach (var sp in species)
+            //{
+            //    species.Add(sp);
+            //}
+            return Json(species);
         }
     }
 }
