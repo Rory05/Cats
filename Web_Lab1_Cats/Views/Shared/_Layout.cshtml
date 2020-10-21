@@ -38,6 +38,25 @@
                         <li class="nav-item back">
                             <a class="words nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Карта</a>
                         </li>
+                      
+                        <li class="nav-item back">
+                            <a class="words nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">  Users</a>
+                        </li>
+                        <li class="nav-item back">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a  style="margin-right:80px" class="words nav-link text-dark" asp-controller="Account" asp-action="Account">@User.Identity.Name</a>
+
+                                <form method="post" asp-controller="Account" asp-action="Logout">
+                                    <input class="words nav-link text-dark" type="submit" value="Вихід" />
+                                </form>
+                            }
+                            else
+                            {
+                                <a  style="font-size: 20px" class="words nav-link text-dark" asp-controller="Account" asp-action="Login">Вхід</a>
+                                <a style="font-size: 20px" class="words nav-link text-dark" asp-controller="Account" asp-action="Register">Реєстація</a>
+                            }
+                        </li>
                     </ul>
                 </div>
             </div>

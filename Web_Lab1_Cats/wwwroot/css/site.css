@@ -113,7 +113,7 @@ body {
 
 .words {
     font-family: 'Segoe Print';
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(109, 18, 38);
     font-weight: bold;
 }
@@ -271,5 +271,51 @@ body {
 }
 
 .back {
+    background-color: rgb(255, 195, 125);
+}
+
+.knopka_all {
+    margin-left: 30%;
+    margin-bottom: 15px;
+    color: black;
+    background-color: rgba(236, 210, 185, 0.50);
+}
+
+    .knopka_all:hover {
+        background-color: rgb(220, 185, 151);
+    }
+
+.knopka_logout {
+    color: black;
+    background-color: rgba(236, 210, 185, 0.50);
+}
+
+    .knopka_logout:hover {
+        background-color: rgb(220, 185, 151);
+    }
+
+.enter_block {
+    background-color: rgba(62, 54, 54, .83);
+    position: absolute;
+    right: 7%;
+    width: 25%;
+}
+.homebtn {
+    margin-left: 25px;
+}
+
+.enter {
+    position: absolute;
+    right: 20px;
+}
+
+.reg {
+    position: absolute;
+    right: 90px;
+}
+.mytext {
+    font-family: 'Segoe Print';
+    text-decoration-color: rgb(220, 185, 151);
+    font-size: 30px;
     background-color: rgb(255, 195, 125);
 }
