@@ -186,7 +186,7 @@ namespace Web_Lab1_Cats.Controllers
             List<Species> species = new List<Species>();
             
             var spec = species.Where(a => a.Name.Contains(term))
-                            .Select(a => new { value = a.Name })
+                            .Select(a => new { name = a.Name })
                             .Distinct();
             //foreach (var sp in species)
             //{

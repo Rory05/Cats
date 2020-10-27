@@ -14,9 +14,9 @@ namespace Web_Lab1_Cats
     {
         public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
-            string adminName = "Admin";
+            string adminName = "admin";
             string adminEmail = "admin@gmail.com";
-            string password = "Maria.5";
+            string password = "124578369";
             if (await roleManager.FindByNameAsync("admin") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole("admin"));
