@@ -42,6 +42,12 @@ namespace Web_Lab1_Cats
             services.AddControllersWithViews();
 
             services.AddIdentity<User, IdentityRole>().AddDefaultTokenProviders().AddEntityFrameworkStores<IdentityContext>();
+
+            var context = services.BuildServiceProvider()
+                     .GetService<CatsContext>();
+            Controllers.BotTelegram bot =
+                            new Controllers.BotTelegram(context);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +78,7 @@ namespace Web_Lab1_Cats
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+         
         }
     }
 }
